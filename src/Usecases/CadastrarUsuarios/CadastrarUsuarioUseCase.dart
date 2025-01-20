@@ -9,6 +9,6 @@ class CadastrarUsuarioUseCase {
 
   Future<dynamic> execute(UserDTO userDTO) async {
     var user = CadastrarUsuarioMapper.toDomain(userDTO);
-    return await _userRepository!.createUser(user);
+    return await _userRepository!.save(user);
   }
 }

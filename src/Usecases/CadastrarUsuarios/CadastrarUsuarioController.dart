@@ -9,7 +9,7 @@ class CadastrarUsuarioController {
 
   Future<dynamic> handle(Request req) async {
     var data = req.readAsString();
-    var cadastrarUsuarioData = CadastrarUsuarioMapper.toUserDTO(data);
+    var cadastrarUsuarioData = CadastrarUsuarioMapper.toUserDTO(data as String);
     return await _cadastrarUsuarioUseCase!.execute(await cadastrarUsuarioData);
   }
 }
